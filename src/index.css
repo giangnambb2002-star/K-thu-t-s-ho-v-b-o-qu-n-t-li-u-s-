@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-navy-950: #08172c;
+  --color-navy-900: #0f294a;
+  --color-navy-800: #163864;
+  --color-navy-700: #1e4980;
+  --color-navy-600: #285fa3;
+  --color-navy-100: #e6effa;
+  --color-navy-50: #f2f6fc;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #f3f6fb;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.archival-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.shadow-card {
+  box-shadow:
+    0 1px 3px rgba(15, 41, 74, 0.05),
+    0 8px 24px -6px rgba(15, 41, 74, 0.07);
+}
+
+.shadow-card-hover {
+  box-shadow:
+    0 2px 6px rgba(15, 41, 74, 0.06),
+    0 14px 30px -8px rgba(15, 41, 74, 0.13);
+}
+
+.shadow-navy {
+  box-shadow:
+    0 6px 20px -4px rgba(15, 41, 74, 0.28),
+    0 2px 6px -1px rgba(8, 23, 44, 0.16);
+}
+
+/* Tinh chỉnh thanh cuộn gọn gàng */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 73, 128, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 41, 74, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
